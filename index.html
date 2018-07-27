@@ -1,0 +1,101 @@
+<style>
+        body,html{
+            background-color:#36393E;
+            height:100%;
+            min-height: 100%;
+            margin:0;
+            padding:0;
+        }
+        .container{
+            display:-webkit-box;
+            display:-ms-flexbox;
+            display:flex;
+            height:100%;
+            -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+
+        }
+        @media screen and (orientation:landscape) and (min-width: 600px){
+            .video{
+                height: 100%;
+                -webkit-box-flex:3;
+                -ms-flex:3;
+                flex:3;
+            }
+            .chat{
+                height: 100%;
+                -webkit-box-flex:1;
+                -ms-flex:1;
+                flex:1;
+                min-width: 200px;
+                max-width: 300px;
+            }
+        }
+        @media screen and (orientation:portrait), screen and (max-width: 600px) {
+             .container{
+                -webkit-box-orient:vertical;
+                -webkit-box-direction:normal;
+                    -ms-flex-direction:column;
+                        flex-direction:column;
+            }
+            .video{
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+            }
+            .chat{
+                overflow: auto;
+                display:-webkit-box;
+                display:-ms-flexbox;
+                display:flex;
+                width:100%;
+                -webkit-box-flex:1;
+                    -ms-flex:1;
+                        flex:1;
+                -webkit-flex:1;
+            }
+            #player{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        iframe {
+            display: block;
+            background: #000;
+            border: none;
+            height: 100%;
+            width: 100%;
+        }
+        #over {
+            position:absolute;
+            top:15px;
+            right:15px;
+            z-index:2;
+        }
+        #viewers {
+            color:#e74c3c;
+            font-size: 18px;
+            font-weight: bold;
+            float: right;
+            vertical-align: middle;
+            padding-top: 3px;
+            padding-left: 6px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+<body data-gr-c-s-loaded="true">
+    <div class="container">
+        <div class="video">
+            <iframe scrolling="no" id="player" src="https://angelthump.com/embed/yopsycho" allowfullscreen="true">
+            </iframe>
+        </div>
+        <div class="chat">
+            <iframe scrolling="no" src="https://www.twitch.tv/embed/the_who/chat?darkpopout">
+            </iframe>
+        </div>
+    </div>
+    <div id="over"> <div id="viewers">offline</div></div>
